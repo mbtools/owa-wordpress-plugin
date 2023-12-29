@@ -3,6 +3,7 @@
 namespace owaWp\settings\fields;
 
 use owaWp\settings\field;
+use owaWp\util;
 
 class boolean_field extends field {
 	
@@ -15,7 +16,7 @@ class boolean_field extends field {
 			return true;
 		} else {
 		
-			$this->addError( $this->get('dom_id'), $this->get('label_for') . ' ' . owaWp\util::localize( 'field must be On or Off.' ) );
+			$this->addError( $this->get('dom_id'), $this->get('label_for') . ' ' . util::localize( 'field must be On or Off.' ) );
 		}
 
 	}

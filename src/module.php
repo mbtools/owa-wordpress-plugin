@@ -233,7 +233,7 @@ class module {
 			}
 			
 			// register the group
-			$this->settings_pages[ $group_name ]->registerSettings( $group_name );
+			$this->settings_pages[ $group_name ]->registerSettings( );
 			
 			// register the sections
 			

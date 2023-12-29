@@ -3,6 +3,7 @@
 namespace owaWp\settings\fields;
 
 use owaWp\settings\fields\text;
+use owaWp\util;
 
 class integer_field extends text {
 	
