@@ -26,6 +26,8 @@ class page {
 	
 	public $options;
 
+	public $default_options;
+	
 	public $sections;
 
 	public function __construct( $params, $options ) {
