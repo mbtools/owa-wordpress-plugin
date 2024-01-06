@@ -187,6 +187,9 @@ class owaWp_plugin extends module {
 			
 			add_action('admin_notices', array( $this, 'showNag') );
 			
+		} else {
+			// init the sdk
+			$this->initOwaSdk();
 		}
 
 	}
@@ -483,11 +486,12 @@ class owaWp_plugin extends module {
 				$config = [
 					
 					//'cookie_domain' => 'your.domain.com',
-					'credentials'		=> [
-						'api_key'		=> $this->getOption('apiKey'),
-						'auth_key'		=> $this->getOption('authKey')
+					'credentials'	=> [
+						'api_key'	=> $this->getOption('apiKey'),
+						'auth_key'	=> $this->getOption('authKey')
 					],
-				    'instance_url'  => $this->getOption('owaEndpoint')
+				    'instance_url'  => $this->getOption('owaEndpoint'),
+					'debug' 		=> $this->getOption('debug')
 				];
 				
 				$sdk = new OwaSdk\sdk( $config );
@@ -1188,7 +1192,7 @@ class owaWp_plugin extends module {
 		
 		if ( $this->isOwaSdkready() ) {
 			
-			$sites_client = $this->owaSdk->createClient();
+			$sites_client = $this->owaSdk->createClient('sites');
 			$sites = $sites_client->listSites();
 		}
 		
@@ -1211,7 +1215,7 @@ class owaWp_plugin extends module {
 		
 		if ( $this->isOwaReadyToTrack() && ! empty( $this->owaSdk ) ) {
 		
-			$tracker = $this->owaSdk->createTracker();
+			$tracker = $this->owaSdk->createClient('tracker');
 	
 			$tracker->setSiteId( self::generateSiteId() );
 	
