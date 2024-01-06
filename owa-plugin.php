@@ -1188,7 +1188,7 @@ class owaWp_plugin extends module {
 		
 		if ( $this->isOwaSdkready() ) {
 			
-			$sites_client = $this->owaSdk->createSites();
+			$sites_client = $this->owaSdk->createClient();
 			$sites = $sites_client->listSites();
 		}
 		

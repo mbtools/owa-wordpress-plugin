@@ -29,7 +29,7 @@ class field {
 	 //
 	public $santizer_callback;
 	
-	public function __construct( $params = '', $options ) {
+	public function __construct( $params, $options ) {
 		
 		$defaults = array(
 			
