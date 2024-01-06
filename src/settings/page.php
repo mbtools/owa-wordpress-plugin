@@ -25,7 +25,9 @@ class page {
 	public $properties;
 	
 	public $options;
-	
+
+	public $sections;
+
 	public function __construct( $params, $options ) {
 		
 
@@ -260,8 +262,7 @@ class page {
 				'class'		=> [],
 				'value'		=> [],
 				'checked'	=> [],
-				'size'		=> [],
-				'name'		=> []
+				'size'		=> []
 				
 			]
 		    

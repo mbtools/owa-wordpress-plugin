@@ -639,12 +639,13 @@ class owaWp_plugin extends module {
 						   esc_attr( get_query_var( $this->getOption( 'feed_subscription_param' ) ) )
 			);
 		}
+		return '';
 	}
 	
 	/**
 	 * Wordpress filter function adds a GUID to the feed URL.
 	 *
-	 * @param array $binfo
+	 * @param string $binfo
 	 * @return string $newbinfo
 	 */
 	function decorateFeedSubscriptionLink( $binfo ) {
@@ -921,7 +922,7 @@ class owaWp_plugin extends module {
 				$feed_subscription_id = esc_attr( get_query_var( $this->getOption( 'feed_subscription_param' ) ) );
 				// track
 				if (method_exists( $owa, 'trackSyndicationFeed') ) {
-					$owa->trackSyndicationFeed( $feed_format, $feedsyndication_id );
+					$owa->trackSyndicationFeed( $feed_format, $feed_subscription_id );
 				}		
 			}
 		}

@@ -18,6 +18,7 @@ class field {
 	
 	public $allowed_html;
 	
+	public $defaults;
 	//
 	 // name of the validator callback to be used
 	 //
